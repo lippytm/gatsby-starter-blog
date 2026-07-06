@@ -46,6 +46,37 @@ Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
 
 [<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-blog)
 
+## 🔑 Environment Variables & OpenAI API Setup
+
+This project supports integration with the OpenAI API. To configure your API key:
+
+1.  **Create a local environment file.**
+
+    Copy the example environment file to create your own `.env` file:
+
+    ```shell
+    cp .env.example .env
+    ```
+
+2.  **Get your OpenAI API key.**
+
+    Sign up or log in to [OpenAI Platform](https://platform.openai.com/) and generate an API key from the [API Keys page](https://platform.openai.com/api-keys).
+
+3.  **Configure your API key.**
+
+    Open the `.env` file and replace `your_openai_api_key_here` with your actual API key:
+
+    ```
+    OPENAI_API_KEY=sk-your-actual-api-key-here
+    ```
+
+4.  **Security best practices.**
+
+    - **Never commit your `.env` file** to version control. It's already excluded in `.gitignore`.
+    - **Never share your API key** publicly or in your code.
+    - **Use environment variables** in your code to access the API key: `process.env.OPENAI_API_KEY`
+    - For production deployments, configure environment variables through your hosting platform (Netlify, Vercel, etc.)
+
 ## 🧐 What's inside?
 
 A quick look at the top-level files and directories you'll see in a typical Gatsby project.
@@ -53,6 +84,7 @@ A quick look at the top-level files and directories you'll see in a typical Gats
     .
     ├── node_modules
     ├── src
+    ├── .env.example
     ├── .gitignore
     ├── gatsby-browser.js
     ├── gatsby-config.js
@@ -66,6 +98,8 @@ A quick look at the top-level files and directories you'll see in a typical Gats
 
 1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
+
+1.  **`.env.example`**: Example environment variables file. Copy this to `.env` and add your actual API keys. The `.env` file is gitignored for security.
 1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
 1.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
